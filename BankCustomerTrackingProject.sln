@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankCustomerTrackingProject", "BankCustomerTrackingProject\BankCustomerTrackingProject.csproj", "{683C8DCA-777B-4D17-A728-208F1B40116B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{683C8DCA-777B-4D17-A728-208F1B40116B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683C8DCA-777B-4D17-A728-208F1B40116B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683C8DCA-777B-4D17-A728-208F1B40116B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683C8DCA-777B-4D17-A728-208F1B40116B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
