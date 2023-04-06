@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace BankCustomerTracking
 {
-    // Müşteri yönetim işlemlerini tanımlayan arayüz
+    // Interface that defines customer management processes
     public interface ICustomerManagement
     {
-        // Yeni müşteri ekler
+        // Customer adds
         void AddCustomer(Customer customer);
 
-        // Belirtilen ID'ye sahip müşteriyi siler
+        // Deletes the customer with the specified ID
         void DeleteCustomer(int id);
 
-        // Tüm müşterileri listeler
+        // Lists all customers
         List<Customer> ListCustomers();
     }
 }

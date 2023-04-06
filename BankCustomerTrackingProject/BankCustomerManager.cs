@@ -3,35 +3,35 @@ using System.Linq;
 
 namespace BankCustomerTracking
 {
-    // Müşteri yönetim işlemlerini gerçekleştiren sınıf
+    // Class performs customer management operations
     public class BankCustomerManager : ICustomerManagement
     {
-        private List<Customer> _customers; // Müşteri listesi
+        private List<Customer> _customers; // Customer list
 
-        // Yapıcı metot, müşteri listesini başlatır
+        // Constructor method, initalize the customer list
         public BankCustomerManager()
         {
             _customers = new List<Customer>();
         }
 
-        // Yeni müşteri ekler
+        // Adds new customer
         public void AddCustomer(Customer customer)
         {
             _customers.Add(customer);
         }
 
-        // Müşteri siler
+        // Deletes customer
         public void DeleteCustomer(int id)
         {
-            // Verilen id'ye sahip müşteriyi bulur
+            // Finds the customer with the given id
             var customer = _customers.FirstOrDefault(c => c.Id == id);
             if (customer != null)
             {
-                _customers.Remove(customer); // Müşteriyi listeden siler
+                _customers.Remove(customer); //Deletes the customer from the list
             }
         }
 
-        // Tüm müşterileri listeler
+        // Deletes the all customers from the list
         public List<Customer> ListCustomers()
         {
             return _customers;

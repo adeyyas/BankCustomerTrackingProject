@@ -1,44 +1,44 @@
 using Xunit;
 using BankCustomerTracking;
 
-// Test sınıfı, BankCustomerManager sınıfındaki AddCustomer ve DeleteCustomer metodlarını test eder.
+// Test classes, Tests the AddCustomer and DeleteCustomer methods in the BankCustomerManager class.
 namespace BankCustomerTracking.Tests
 {
     public class CustomerManagementTests
     {
-        // AddCustomer metodunun doğru çalışıp çalışmadığını kontrol eder.
+        // Checks if the Add Customer method is working correctly.
         [Fact]
         public void AddCustomer_ShouldIncreaseCustomerCount()
         {
-            // Arrange: Test için gerekli değişkenlerin hazırlanması.
-            var customerManager = new BankCustomerManager(); // BankCustomerManager sınıfı örneği oluşturulur.
-            var initialCount = customerManager.ListCustomers().Count; // Müşteri sayısı, metod çağrılmadan önce sayılır.
-            var customer = new Customer(1, "Erdal", "Yayla"); // Test için kullanılacak örnek müşteri oluşturulur.
+            // Arrange: Preparation of variables required for testing.
+            var customerManager = new BankCustomerManager(); // An instance of the Bank Customer Manager class is created.
+            var initialCount = customerManager.ListCustomers().Count; //Customer count is counted before the method is called.
+            var customer = new Customer(1, "Erdal", "Yayla"); // A sample client to be used for testing is created.
 
-            // Act: Metodun çalıştırılması.
-            customerManager.AddCustomer(customer); // Müşteri eklenir.
+            // Act: running the method.
+            customerManager.AddCustomer(customer); // Customer adds.
 
-            // Assert: Beklenen sonucun doğru olup olmadığının kontrolü.
-            var actualCount = customerManager.ListCustomers().Count; // Yeni müşteri sayısı sayılır.
-            Assert.Equal(initialCount + 1, actualCount); // Yeni müşteri sayısının, önceki müşteri sayısına 1 eklenmiş haline eşit olup olmadığı kontrol edilir.
+            // Assert: Checking if the expected result is correct.
+            var actualCount = customerManager.ListCustomers().Count; // Number of new customers counted.
+            Assert.Equal(initialCount + 1, actualCount); // It is checked whether the number of new customers is equal to the number of previous customers with 1 added..
         }
 
-        // DeleteCustomer metodunun doğru çalışıp çalışmadığını kontrol eder.
+        // Checks if the Delete Customer method is working correctly.
         [Fact]
         public void DeleteCustomer_ShouldDecreaseCustomerCount()
         {
-            // Arrange: Test için gerekli değişkenlerin hazırlanması.
-            var customerManager = new BankCustomerManager(); // BankCustomerManager sınıfı örneği oluşturulur.
-            var customer = new Customer(1, "Erdal", "Yayla"); // Test için kullanılacak örnek müşteri oluşturulur.
-            customerManager.AddCustomer(customer); // Müşteri eklenir.
-            var initialCount = customerManager.ListCustomers().Count; // Müşteri sayısı, metod çağrılmadan önce sayılır.
+            // Arrange: Preparation of variables required for testing.
+            var customerManager = new BankCustomerManager(); // An instance of the Bank Customer Manager class is created.
+            var customer = new Customer(1, "Erdal", "Yayla"); //  A sample customer to be used for testing is created
+            customerManager.AddCustomer(customer); // Customer is added.
+            var initialCount = customerManager.ListCustomers().Count; // The number of clients is counted before the method is called.
 
-            // Act: Metodun çalıştırılması.
-            customerManager.DeleteCustomer(1); // Müşteri silinir.
+            // Act: Running the method.
+            customerManager.DeleteCustomer(1); // Customer deleted.
 
-            // Assert: Beklenen sonucun doğru olup olmadığının kontrolü.
-            var actualCount = customerManager.ListCustomers().Count; // Yeni müşteri sayısı sayılır.
-            Assert.Equal(initialCount - 1, actualCount); // Yeni müşteri sayısının, önceki müşteri sayısından 1 çıkarılmış haline eşit olup olmadığı kontrol edilir.
+            // Assert: Checking whether the expected result is correct.
+            var actualCount = customerManager.ListCustomers().Count; // Number of new customers counted.
+            Assert.Equal(initialCount - 1, actualCount); //It is checked whether the number of new customers equals 1 less than the previous number of customers.
         }
     }
 }

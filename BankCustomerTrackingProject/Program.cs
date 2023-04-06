@@ -4,10 +4,10 @@ namespace BankCustomerTracking
 {
     class Program
     {
-        // Ana program başlatılır.
+        // The main class is started.
         public static void main(string[] args)
         {
-            // "Bank Customer Tracking Project" yazısı ekrana yazdırılır.
+            // The text "Bank Customer Tracking Project" is printed on the console.
             Console.WriteLine("Bank Customer Tracking Project");
             Console.ReadLine();
         }
